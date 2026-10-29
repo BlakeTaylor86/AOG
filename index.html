@@ -4,824 +4,181 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Adam Operations Group | Build a Business That Runs Without You</title>
-  <meta name="description" content="Adam Operations Group helps established, owner-led businesses build systems, leadership, and operations that do not depend on the owner for every decision. Take the free Operator Exposure Scorecard.">
+  <meta name="description" content="Adam Operations Group helps established, owner-led businesses build operations, leadership, and systems that do not depend on the owner for every decision.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563eb'/%3E%3Cpath d='M8 21.5 16 8l8 13.5h-3.1l-1.2-2.4H12.3L11.1 21.5H8zm4.9-4.6h6.2L16 12.2l-3.1 4.7z' fill='white'/%3E%3C/svg%3E">
-  <style>
-    :root {
-      --ink: #1a1a1a;
-      --muted: #5c5c5c;
-      --soft: #6b6b76;
-      --line: #e6e6e8;
-      --bg: #f5f5f6;
-      --card: #f3f3f5;
-      --white: #ffffff;
-      --blue: #1d4ed8;
-      --blue-bright: #2563eb;
-      --indigo: #4f46e5;
-      --blue-soft: #eef2ff;
-      --max: 1120px;
-      --header: 76px;
-      --shadow: 0 10px 30px rgba(17, 17, 17, 0.05);
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-      color: var(--ink);
-      background: var(--bg);
-      font-size: 16px;
-      line-height: 1.6;
-    }
-    img, svg { display: block; }
-    a { color: inherit; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    :focus-visible {
-      outline: 2px solid var(--blue-bright);
-      outline-offset: 3px;
-    }
-    .skip {
-      position: absolute;
-      left: 16px;
-      top: -40px;
-      background: var(--ink);
-      color: white;
-      padding: 8px 12px;
-      border-radius: 8px;
-      z-index: 20;
-    }
-    .skip:focus { top: 12px; }
-
-    .wrap {
-      width: min(var(--max), calc(100% - 40px));
-      margin: 0 auto;
-    }
-    .center { text-align: center; }
-    .lede {
-      max-width: 680px;
-      margin: 14px auto 0;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-    h1, h2, h3, p { margin: 0; }
-    h1 {
-      font-size: clamp(2.5rem, 5.4vw, 3.75rem);
-      line-height: 1.08;
-      letter-spacing: -0.035em;
-      font-weight: 800;
-    }
-    h2 {
-      font-size: clamp(1.85rem, 3.4vw, 2.55rem);
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      font-weight: 800;
-    }
-    h3 {
-      font-size: 1.12rem;
-      letter-spacing: -0.02em;
-      font-weight: 700;
-      line-height: 1.3;
-    }
-    .accent {
-      background: linear-gradient(90deg, var(--blue-bright), var(--indigo));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      height: var(--header);
-      display: flex;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.84);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
-    }
-    .bar {
-      width: min(var(--max), calc(100% - 40px));
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      min-width: 0;
-    }
-    .mark {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      color: white;
-      background: linear-gradient(135deg, var(--blue-bright), var(--indigo));
-      box-shadow: 0 8px 16px rgba(37, 99, 235, 0.28);
-      flex: none;
-    }
-    .brand-text { display: flex; flex-direction: column; line-height: 1.05; }
-    .brand-text strong { font-size: 0.95rem; letter-spacing: -0.02em; }
-    .brand-text small {
-      margin-top: 3px;
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--blue-bright);
-    }
-    nav { display: flex; align-items: center; gap: 26px; }
-    nav a {
-      text-decoration: none;
-      color: #5f5f66;
-      font-weight: 500;
-      font-size: 0.95rem;
-    }
-    nav a:hover { color: var(--ink); }
-    nav a.btn { color: white; font-weight: 600; }
-    nav a.btn:hover { color: white; }
-    .menu {
-      display: none;
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: white;
-      color: var(--ink);
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      text-decoration: none;
-      border-radius: 999px;
-      font-weight: 600;
-      border: 0;
-      cursor: pointer;
-    }
-    .btn svg { width: 16px; height: 16px; }
-    .btn-dark {
-      background: var(--ink);
-      color: white;
-      padding: 10px 16px;
-      font-size: 0.92rem;
-    }
-    .btn-dark:hover { background: #000; }
-    .btn-blue {
-      background: var(--blue);
-      color: white;
-      padding: 14px 28px;
-      font-size: 1rem;
-      box-shadow: 0 10px 18px rgba(29, 78, 216, 0.22);
-    }
-    .btn-blue:hover { background: #1e40af; }
-    .btn-ghost {
-      background: transparent;
-      color: var(--ink);
-      padding: 14px 8px;
-      font-size: 1rem;
-    }
-    .btn-ghost:hover { color: var(--blue); }
-
-    .hero {
-      padding: 76px 0 28px;
-      text-align: center;
-    }
-    .hero .lede { font-size: 1.08rem; }
-    .hero-actions {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px 18px;
-      margin-top: 28px;
-      flex-wrap: wrap;
-    }
-    .fine {
-      margin-top: 16px;
-      color: var(--soft);
-      font-size: 0.92rem;
-    }
-    .paths {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      padding: 54px 0 72px;
-    }
-    .path {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
-      text-decoration: none;
-      background: white;
-      border: 1px solid #ececef;
-      border-radius: 24px;
-      padding: 28px 28px 24px;
-      box-shadow: var(--shadow);
-      min-height: 230px;
-      transition: border-color 0.15s ease, transform 0.15s ease;
-    }
-    .path:hover { border-color: #d5d5dc; transform: translateY(-2px); }
-    .path h2 {
-      font-size: 1.35rem;
-      line-height: 1.25;
-      letter-spacing: -0.025em;
-    }
-    .icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      background: var(--blue-soft);
-      color: var(--blue-bright);
-      margin-bottom: 18px;
-    }
-    .icon svg { width: 22px; height: 22px; }
-    .path p, .card p, .offer p, .step p, .faq p, .about-copy p, .who-copy p {
-      color: var(--muted);
-      margin-top: 8px;
-    }
-    .more {
-      margin-top: auto;
-      padding-top: 18px;
-      color: var(--indigo);
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .more svg { width: 16px; height: 16px; }
-
-    .band {
-      background: #1c1c1c;
-      color: white;
-      padding: 84px 0;
-    }
-    .band h2 { max-width: 740px; }
-    .band .intro {
-      max-width: 640px;
-      color: rgba(255, 255, 255, 0.72);
-      margin-top: 16px;
-      font-size: 1.05rem;
-    }
-    .pillars {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 42px;
-      list-style: none;
-      padding: 0;
-    }
-    .pillars li {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 18px;
-      padding: 22px;
-    }
-    .pillars h3 { font-size: 1.05rem; }
-    .pillars p { color: rgba(255, 255, 255, 0.7); margin-top: 8px; }
-
-    section { scroll-margin-top: 92px; }
-    .section { padding: 88px 0; }
-    .section.white { background: white; }
-    .section.gray { background: var(--bg); }
-    .section-head { margin-bottom: 36px; }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 16px;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .card {
-      background: var(--card);
-      border-radius: 18px;
-      padding: 26px 22px 24px;
-      text-align: left;
-    }
-    .cards .card:nth-child(-n+3) { grid-column: span 2; }
-    .cards .card:nth-child(n+4) { grid-column: span 3; }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 14px;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .step {
-      background: white;
-      border: 1px solid #ececef;
-      border-radius: 18px;
-      padding: 22px 18px 20px;
-      text-align: left;
-    }
-    .num {
-      display: block;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      font-size: 0.95rem;
-      color: var(--blue-bright);
-      margin-bottom: 14px;
-    }
-
-    .who {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 48px;
-      align-items: start;
-    }
-    .who-copy h2, .about-copy h2 { text-align: left; }
-    .checks {
-      list-style: none;
-      padding: 8px 0 0;
-      margin: 0;
-      display: grid;
-      gap: 12px;
-    }
-    .checks li {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      background: var(--card);
-      border-radius: 14px;
-      padding: 14px 16px;
-      color: var(--ink);
-    }
-    .tick {
-      width: 22px;
-      height: 22px;
-      border-radius: 999px;
-      background: var(--blue-soft);
-      color: var(--blue);
-      display: grid;
-      place-items: center;
-      flex: none;
-      margin-top: 1px;
-    }
-    .tick svg { width: 14px; height: 14px; }
-
-    .offers { display: grid; gap: 16px; }
-    .feature {
-      display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 24px;
-      align-items: center;
-      background: white;
-      border: 1px solid #e4e7fb;
-      border-radius: 24px;
-      padding: 32px;
-      box-shadow: var(--shadow);
-      text-align: left;
-    }
-    .kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--blue);
-      font-weight: 700;
-      font-size: 0.82rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .feature h3 { font-size: 1.7rem; letter-spacing: -0.03em; margin-top: 8px; }
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
-      padding: 0;
-      list-style: none;
-    }
-    .chips li {
-      background: var(--blue-soft);
-      color: #1e3a8a;
-      border-radius: 999px;
-      padding: 6px 12px;
-      font-size: 0.88rem;
-      font-weight: 600;
-    }
-    .feature-side {
-      background: var(--bg);
-      border-radius: 18px;
-      padding: 22px;
-    }
-    .feature-side p { color: var(--muted); }
-    .feature-side .btn { margin-top: 18px; width: 100%; }
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .offer {
-      background: white;
-      border: 1px solid #ececef;
-      border-radius: 18px;
-      padding: 24px;
-      text-align: left;
-    }
-
-    .about {
-      display: grid;
-      grid-template-columns: 0.72fr 1.28fr;
-      gap: 48px;
-      align-items: start;
-    }
-    .creds {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 18px;
-      padding: 0;
-      list-style: none;
-    }
-    .creds li {
-      border: 1px solid var(--line);
-      background: var(--bg);
-      border-radius: 999px;
-      padding: 7px 12px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: #333;
-    }
-    .about-copy p + p,
-    .who-copy p + p { margin-top: 14px; }
-    .book { font-style: italic; }
-
-    .faq {
-      max-width: 820px;
-      margin: 0 auto;
-      display: grid;
-      gap: 12px;
-    }
-    .faq article {
-      background: white;
-      border: 1px solid #ececef;
-      border-radius: 16px;
-      padding: 20px 22px;
-      text-align: left;
-    }
-
-    .close { padding: 28px 0 96px; }
-    .close h2 { max-width: 760px; margin: 0 auto; }
-    .footer {
-      border-top: 1px solid var(--line);
-      background: white;
-      padding: 22px 0 28px;
-    }
-    .footer-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: center;
-      color: var(--soft);
-      font-size: 0.92rem;
-    }
-    .footer a { color: var(--muted); font-weight: 600; text-decoration: none; }
-    .footer a:hover { color: var(--blue); }
-    .footer nav { gap: 18px; }
-
-    @media (max-width: 980px) {
-      .steps { grid-template-columns: 1fr 1fr; }
-      .steps .step:last-child { grid-column: 1 / -1; }
-      .cards { grid-template-columns: 1fr 1fr; }
-      .cards .card,
-      .cards .card:nth-child(-n+3),
-      .cards .card:nth-child(n+4) { grid-column: auto; }
-      .cards .card:last-child { grid-column: 1 / -1; }
-      .who, .about, .feature { grid-template-columns: 1fr; }
-      .pillars { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 860px) {
-      .menu { display: inline-flex; }
-      nav {
-        display: none;
-        position: absolute;
-        top: var(--header);
-        left: 0;
-        right: 0;
-        background: #fff;
-        border-bottom: 1px solid var(--line);
-        box-shadow: 0 16px 30px rgba(17, 17, 17, 0.08);
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 8px 22px 18px;
-        gap: 0;
-      }
-      nav.open { display: flex; }
-      nav a { padding: 12px 0; width: 100%; }
-      .header-cta { display: none; }
-      nav .header-cta {
-        display: inline-flex;
-        margin-top: 8px;
-        width: auto;
-      }
-    }
-
-    @media (max-width: 680px) {
-      .wrap, .bar { width: min(var(--max), calc(100% - 32px)); }
-      .paths, .grid-2, .steps, .cards { grid-template-columns: 1fr; }
-      .steps .step:last-child,
-      .cards .card:last-child { grid-column: auto; }
-      .hero { padding-top: 48px; }
-      .section { padding: 64px 0; }
-      .feature, .path { padding: 22px; }
-      .footer-row { flex-direction: column; align-items: flex-start; }
-      .footer nav { flex-direction: column; align-items: flex-start; gap: 8px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .path { transition: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/site.css">
 </head>
-<body id="top">
+<body>
   <a class="skip" href="#main">Skip to content</a>
   <header>
     <div class="bar">
-      <a class="brand" href="#top" aria-label="Adam Operations Group, home">
-        <span class="mark" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M4.2 18.8 12 5.2l7.8 13.6h-3.15l-1.15-2.15H8.5L7.35 18.8H4.2zm4.95-4.35h5.7L12 9.55l-2.85 4.9z"/></svg>
-        </span>
-        <span class="brand-text">
-          <strong>Adam Operations</strong>
-          <small>Group</small>
-        </span>
+      <a class="brand" href="index.html" aria-label="Adam Operations Group, home">
+        <span class="mark" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M4.2 18.8 12 5.2l7.8 13.6h-3.15l-1.15-2.15H8.5L7.35 18.8H4.2zm4.95-4.35h5.7L12 9.55l-2.85 4.9z"/></svg></span>
+        <span class="brand-text"><strong>Adam Operations</strong><small>Group</small></span>
       </a>
       <button class="menu" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
       <nav id="nav" aria-label="Primary">
-        <a href="#work">What we do</a>
-        <a href="#system">The system</a>
-        <a href="#who">Who we help</a>
-        <a href="#services">Work with us</a>
-        <a href="#about">About</a>
-        <a class="btn btn-dark header-cta" href="https://adamoperationsgroup.com/scorecard-survey">Take the Scorecard</a>
+        <a href="services.html">Services</a>
+        <a href="system.html">The System</a>
+        <a href="who.html">Who we help</a>
+        <a href="work.html">Work with us</a>
+        <a href="about.html">About</a>
+        <a class="btn btn-dark header-cta" href="scorecard.html">Take the Scorecard</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
     <div class="wrap">
-      <section class="hero" aria-labelledby="hero-title">
-        <h1 id="hero-title">Build a Business That Runs <span class="accent">Without You.</span></h1>
+      <section class="hero">
+        <h1>Build a Business That Runs <span class="accent">Without You.</span></h1>
         <p class="lede">Adam Operations Group helps business owners build stronger, more organized companies that do not depend on them for every decision. The work is operations, leadership, systems, and growth for established, owner-led businesses.</p>
         <div class="hero-actions">
-          <a class="btn btn-blue" href="https://adamoperationsgroup.com/scorecard-survey">Take the Scorecard
+          <a class="btn btn-blue" href="scorecard.html">Take the Scorecard
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a class="btn btn-ghost" href="#system">See how we work</a>
+          <a class="btn btn-ghost" href="system.html">See the system</a>
         </div>
         <p class="fine">Free · 30 questions · About 8 minutes · No account required</p>
       </section>
 
       <div class="paths">
-        <a class="path" href="https://adamoperationsgroup.com/scorecard-survey">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-          </span>
+        <a class="path" href="scorecard.html">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
           <h2>See where the business depends on you</h2>
           <p>The Operator Exposure Scorecard is a free diagnostic. It shows how much the company still relies on your personal involvement, and where the first gap is.</p>
-          <span class="more">Take the Scorecard
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
+          <span class="more">Take the Scorecard <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a class="path" href="#system">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18 8 3.2a2 2 0 0 1 0 3.24l-8 3.2a2 2 0 0 1-1.66 0l-8-3.2a2 2 0 0 1 0-3.24l8-3.2a2 2 0 0 1 1.66 0Z"/><path d="m2 12 8.83 3.53a2 2 0 0 0 1.66 0L22 12"/><path d="m2 17 8.83 3.53a2 2 0 0 0 1.66 0L22 17"/></svg>
-          </span>
+        <a class="path" href="system.html">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18 8 3.2a2 2 0 0 1 0 3.24l-8 3.2a2 2 0 0 1-1.66 0l-8-3.2a2 2 0 0 1 0-3.24l8-3.2a2 2 0 0 1 1.66 0Z"/><path d="m2 12 8.83 3.53a2 2 0 0 0 1.66 0L22 12"/><path d="m2 17 8.83 3.53a2 2 0 0 0 1.66 0L22 17"/></svg></span>
           <h2>Build a company that can operate without you</h2>
           <p>The Adam Operating System is a five-step framework for processes, delegation, technology, and leadership that hold up when you are not in every decision.</p>
-          <span class="more">See the system
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
+          <span class="more">See the system <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
       </div>
     </div>
 
-    <section class="band" aria-labelledby="mission-title">
-      <div class="wrap">
-        <h2 id="mission-title">From working in the business to working on it.</h2>
-        <p class="intro">A lot of owners become the center of every decision, problem, and responsibility. That makes it hard to grow, delegate, or step away. AOG helps change that structure.</p>
-        <ul class="pillars">
-          <li>
-            <h3>Structured processes</h3>
-            <p>Organized, repeatable work so the business stays consistent without the owner in the middle of it.</p>
-          </li>
-          <li>
-            <h3>Clear accountability</h3>
-            <p>Roles, expectations, and authority so decisions do not all route back to one person.</p>
-          </li>
-          <li>
-            <h3>Teams that can run it</h3>
-            <p>Managers and employees who can operate the company with less daily owner involvement.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section white" id="work" aria-labelledby="work-title">
+    <section class="section white" id="services">
       <div class="wrap">
         <div class="section-head center">
-          <h2 id="work-title">What Adam Operations Group does</h2>
+          <h2>What Adam Operations Group does</h2>
           <p class="lede">Operations consulting, leadership development, systems, and strategic guidance for established businesses.</p>
         </div>
         <ul class="cards">
           <li class="card">
-            <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"/></svg>
-            </span>
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg></span>
             <h3>Business operations and systems</h3>
-            <p>Standard operating procedures, documented workflows, and repeatable processes that make the work more consistent and efficient.</p>
+            <p>Standard operating procedures, documented workflows, and repeatable processes that make the work consistent.</p>
           </li>
           <li class="card">
-            <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </span>
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
             <h3>Leadership and delegation</h3>
-            <p>Clear roles, stronger managers, and enough authority for the leadership team to decide without constant owner involvement.</p>
+            <p>Clear roles, stronger managers, and authority for the team to decide without constant owner involvement.</p>
           </li>
           <li class="card">
-            <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
-            </span>
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></span>
             <h3>Performance and financial visibility</h3>
-            <p>Scorecards, measurable goals, and a clearer view of performance so owners can see inefficiencies and decide with better information.</p>
+            <p>Scorecards, measurable goals, and a clearer view of performance so decisions rest on better information.</p>
           </li>
-          <li class="card">
-            <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            </span>
-            <h3>Automation, AI, and technology</h3>
-            <p>Workflow automation and practical tools that cut repetitive tasks, improve communication, and fit the processes the business already has.</p>
-          </li>
-          <li class="card">
-            <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
-            </span>
-            <h3>Growth and operational strategy</h3>
-            <p>Bottlenecks removed, management strengthened, and a structure that can support growth without the owner in every daily decision.</p>
-          </li>
+        </ul>
+        <p class="section-link"><a class="more" href="services.html">See all services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+      </div>
+    </section>
+
+    <section class="section gray" id="system">
+      <div class="wrap">
+        <div class="section-head center">
+          <h2>The Adam Operating System</h2>
+          <p class="lede">Five steps for finding operational weaknesses and building a business that is more organized, efficient, scalable, and less dependent on its owner.</p>
+        </div>
+        <ol class="steps">
+          <li class="step"><span class="num">01</span><h3>Awareness</h3><p>See where the operational problems are, and which areas need work first.</p></li>
+          <li class="step"><span class="num">02</span><h3>Documentation</h3><p>Write the procedures, expectations, and repeatable processes the business should own.</p></li>
+          <li class="step"><span class="num">03</span><h3>Delegation</h3><p>Set responsibilities and give people the authority to decide without the owner.</p></li>
+          <li class="step"><span class="num">04</span><h3>Automation</h3><p>Use technology to reduce repetitive work and make daily operations more efficient.</p></li>
+          <li class="step"><span class="num">05</span><h3>Leadership</h3><p>Develop capable leaders, raise accountability, and build a stronger culture.</p></li>
+        </ol>
+        <p class="section-link"><a class="more" href="system.html">How the system works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <h2>From working in the business to working on it.</h2>
+        <p class="intro">A lot of owners become the center of every decision, problem, and responsibility. That makes it hard to grow, delegate, or step away. AOG helps change that structure.</p>
+        <ul class="pillars">
+          <li><h3>Structured processes</h3><p>Organized, repeatable work so the business stays consistent without the owner in the middle of it.</p></li>
+          <li><h3>Clear accountability</h3><p>Roles, expectations, and authority so decisions do not all route back to one person.</p></li>
+          <li><h3>Teams that can run it</h3><p>Managers and employees who can operate the company with less daily owner involvement.</p></li>
         </ul>
       </div>
     </section>
 
-    <section class="section gray" id="system" aria-labelledby="system-title">
-      <div class="wrap">
-        <div class="section-head center">
-          <h2 id="system-title">The Adam Operating System</h2>
-          <p class="lede">A five-step framework for finding operational weaknesses and building a business that is more organized, efficient, scalable, and less dependent on its owner.</p>
-        </div>
-        <ol class="steps">
-          <li class="step">
-            <span class="num">01</span>
-            <h3>Awareness</h3>
-            <p>See where the operational problems are, and which areas need work first.</p>
-          </li>
-          <li class="step">
-            <span class="num">02</span>
-            <h3>Documentation</h3>
-            <p>Write the procedures, expectations, and repeatable processes the business should own.</p>
-          </li>
-          <li class="step">
-            <span class="num">03</span>
-            <h3>Delegation</h3>
-            <p>Set responsibilities and give people the authority to decide without the owner.</p>
-          </li>
-          <li class="step">
-            <span class="num">04</span>
-            <h3>Automation</h3>
-            <p>Use technology to reduce repetitive work and make daily operations more efficient.</p>
-          </li>
-          <li class="step">
-            <span class="num">05</span>
-            <h3>Leadership</h3>
-            <p>Develop capable leaders, raise accountability, and build a stronger culture.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="section white" id="who" aria-labelledby="who-title">
+    <section class="section white">
       <div class="wrap who">
         <div class="who-copy">
-          <h2 id="who-title">Built for owners who are already in it</h2>
+          <h2>Built for owners who are already in it</h2>
           <p>AOG works with established, owner-led businesses that already have employees, customers, and ongoing operations, and need stronger systems and leadership.</p>
           <p>The work is practical: find what is holding the business back, then put a structure in place.</p>
+          <p class="section-link start"><a class="more" href="who.html">Who this is for <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
         </div>
         <ul class="checks">
           <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Overwhelmed by daily responsibilities</li>
           <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Responsible for nearly every important decision</li>
           <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Delegation or accountability is inconsistent</li>
-          <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Processes live in people’s heads, not on paper</li>
+          <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Processes are inconsistent or undocumented</li>
           <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Growth is stalled by missing operational structure</li>
-          <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>The day goes to problems instead of the future of the business</li>
-          <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>More freedom is the goal, without giving up performance</li>
         </ul>
       </div>
     </section>
 
-    <section class="section gray" id="services" aria-labelledby="services-title">
+    <section class="section gray" id="work">
       <div class="wrap">
         <div class="section-head center">
-          <h2 id="services-title">Ways to work with AOG</h2>
-          <p class="lede">Start with the scorecard. It is the clearest picture of how dependent the business is on you, and the practical place to begin.</p>
+          <h2>Ways to work with AOG</h2>
+          <p class="lede">Start with the scorecard. It is the clearest picture of how dependent the business is on you.</p>
         </div>
-        <div class="offers">
-          <article class="feature">
-            <div>
-              <p class="kicker">Start here · Free</p>
-              <h3>Operator Exposure Scorecard</h3>
-              <p>A 30-question diagnostic across five areas of the operation. You get an Operator Exposure Score, a read on the weaknesses, and a clearer set of opportunities to improve. It is a diagnostic, not a quiz.</p>
-              <ul class="chips">
-                <li>30 questions</li>
-                <li>Five areas</li>
-                <li>About 8 minutes</li>
-                <li>No account</li>
-              </ul>
-            </div>
-            <div class="feature-side">
-              <p>The scorecard shows where owner involvement is doing the work the business should own, and what to address first.</p>
-              <a class="btn btn-blue" href="https://adamoperationsgroup.com/scorecard-survey">Take the assessment
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-          </article>
-          <ul class="grid-2">
-            <li class="offer">
-              <h3>5-Day Owner Bottleneck Challenge</h3>
-              <p>A short, focused challenge to name one major operational bottleneck and start a practical fix.</p>
-            </li>
-            <li class="offer">
-              <h3>Operator Exposure Assessment</h3>
-              <p>A deeper look at operational structure, leadership responsibilities, decision-making, and how dependent the company is on the owner.</p>
-            </li>
-            <li class="offer">
-              <h3>90-Day Adam Operating System Implementation</h3>
-              <p>A structured build of systems, documented procedures, leadership accountability, and more operational independence.</p>
-            </li>
-            <li class="offer">
-              <h3>Ongoing operational support</h3>
-              <p>Continued guidance to keep the systems in use, watch performance, improve operations, and support longer-term growth.</p>
-            </li>
-          </ul>
-        </div>
+        <article class="feature">
+          <div>
+            <p class="kicker">Start here · Free</p>
+            <h3>Operator Exposure Scorecard</h3>
+            <p>A 30-question diagnostic across five areas of the operation. You get an Operator Exposure Score, a read on the weaknesses, and a clearer set of opportunities. It is a diagnostic, not a quiz.</p>
+            <ul class="chips">
+              <li>30 questions</li>
+              <li>Five areas</li>
+              <li>About 8 minutes</li>
+              <li>No account</li>
+            </ul>
+          </div>
+          <div class="feature-side">
+            <p>The scorecard shows where owner involvement is doing the work the business should own, and what to address first.</p>
+            <a class="btn btn-blue" href="https://adamoperationsgroup.com/scorecard-survey">Take the assessment <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+        <ul class="grid-2">
+          <li class="offer"><h3>5-Day Owner Bottleneck Challenge</h3><p>Name one major operational bottleneck and start a practical fix.</p></li>
+          <li class="offer"><h3>Operator Exposure Assessment</h3><p>A deeper look at structure, leadership, decision-making, and owner dependency.</p></li>
+          <li class="offer"><h3>90-Day Implementation</h3><p>Systems, documented procedures, leadership accountability, and more independence.</p></li>
+          <li class="offer"><h3>Ongoing operational support</h3><p>Keep the systems in use, watch performance, and support longer-term growth.</p></li>
+        </ul>
+        <p class="section-link"><a class="more" href="work.html">All the ways to work together <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
       </div>
     </section>
 
-    <section class="section white" id="about" aria-labelledby="about-title">
-      <div class="wrap about">
-        <div>
-          <h2 id="about-title">About Adam Broussard</h2>
-          <ul class="creds">
-            <li>Founder</li>
-            <li>Navy veteran</li>
-            <li>Louisiana real estate broker</li>
-            <li>20+ years operating</li>
-            <li>Author, Adapt or Be Managed</li>
-          </ul>
-        </div>
-        <div class="about-copy">
-          <p>Adam Broussard founded Adam Operations Group after more than 20 years building, managing, and restructuring local service businesses. His experience runs through real estate, construction, property management, acquisitions, financing, and day-to-day operations.</p>
-          <p>He is the author of <span class="book">Adapt or Be Managed</span>, on the realities of ownership, leadership, and building systems that can last. The work at AOG comes from that operating experience: practical fixes that hold up in a real business.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section gray" id="faq" aria-labelledby="faq-title">
+    <section class="section white" id="faq">
       <div class="wrap">
         <div class="section-head center">
-          <h2 id="faq-title">Common questions</h2>
+          <h2>Common questions</h2>
         </div>
         <div class="faq">
           <article>
             <h3>What does Adam Operations Group do?</h3>
-            <p>AOG helps established, owner-led businesses put operations, leadership, systems, and accountability in place so the company does not depend on the owner for every decision. That includes documented processes, performance visibility, practical technology, and a plan for sustainable growth.</p>
+            <p>AOG helps established, owner-led businesses put operations, leadership, systems, and accountability in place so the company does not depend on the owner for every decision.</p>
           </article>
           <article>
             <h3>Who is it for?</h3>
@@ -829,60 +186,49 @@
           </article>
           <article>
             <h3>How does the work start?</h3>
-            <p>With the Operator Exposure Scorecard. It is free, takes about eight minutes, and does not require an account. The result is a score, the operational areas creating the most drag, and a clearer first step.</p>
+            <p>With the Operator Exposure Scorecard. It is free, takes about eight minutes, and does not require an account.</p>
           </article>
           <article>
             <h3>What is the Adam Operating System?</h3>
-            <p>Five steps: Awareness, Documentation, Delegation, Automation, and Leadership. The same five areas the scorecard measures. The point is a business that is more organized and less dependent on its owner.</p>
+            <p>Five steps: Awareness, Documentation, Delegation, Automation, and Leadership. The same five areas the scorecard measures.</p>
           </article>
         </div>
+        <p class="section-link"><a class="more" href="faq.html">More questions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
       </div>
     </section>
 
-    <section class="section white close" aria-labelledby="close-title">
+    <section class="section gray close">
       <div class="wrap center">
-        <h2 id="close-title">Find where the business still depends on you.</h2>
+        <h2>Find where the business still depends on you.</h2>
         <p class="lede">The Operator Exposure Scorecard is the place to start. Free, 30 questions, about eight minutes, and a full report sent to your inbox.</p>
         <div class="hero-actions">
-          <a class="btn btn-blue" href="https://adamoperationsgroup.com/scorecard-survey">Take the Scorecard
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+          <a class="btn btn-blue" href="https://adamoperationsgroup.com/scorecard-survey">Take the Scorecard <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="wrap footer-row">
-      <p>© 2026 Adam Operations Group</p>
+    <div class="wrap footer-top">
+      <a class="brand" href="index.html" aria-label="Adam Operations Group, home">
+        <span class="mark" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M4.2 18.8 12 5.2l7.8 13.6h-3.15l-1.15-2.15H8.5L7.35 18.8H4.2zm4.95-4.35h5.7L12 9.55l-2.85 4.9z"/></svg></span>
+        <span class="brand-text"><strong>Adam Operations</strong><small>Group</small></span>
+      </a>
       <nav aria-label="Footer">
-        <a href="https://adamoperationsgroup.com/">Scorecard overview</a>
-        <a href="https://adamoperationsgroup.com/scorecard-survey">Take the assessment</a>
+        <a href="services.html">Services</a>
+        <a href="system.html">The System</a>
+        <a href="who.html">Who we help</a>
+        <a href="work.html">Work with us</a>
+        <a href="about.html">About</a>
+        <a href="scorecard.html">Scorecard</a>
+        <a href="faq.html">FAQ</a>
       </nav>
     </div>
+    <div class="wrap footer-bottom">
+      <p>© 2026 Adam Operations Group</p>
+      <a href="https://adamoperationsgroup.com/scorecard-survey">Take the assessment</a>
+    </div>
   </footer>
-
-  <script>
-    const menu = document.querySelector(".menu");
-    const nav = document.querySelector("#nav");
-    const iconOpen = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
-    const iconClose = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>';
-
-    menu.addEventListener("click", () => {
-      const open = nav.classList.toggle("open");
-      menu.setAttribute("aria-expanded", String(open));
-      menu.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-      menu.innerHTML = open ? iconClose : iconOpen;
-    });
-
-    nav.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("open");
-        menu.setAttribute("aria-expanded", "false");
-        menu.setAttribute("aria-label", "Open menu");
-        menu.innerHTML = iconOpen;
-      });
-    });
-  </script>
+  <script src="js/site.js"></script>
 </body>
 </html>
