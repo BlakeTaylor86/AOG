@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>
+    if ((location.protocol === "http:" || location.protocol === "https:") && location.hostname !== "www.adamoperationsgroup.com") {
+      location.replace("https://www.adamoperationsgroup.com" + location.pathname + location.search + location.hash);
+    }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Who we help | Adam Operations Group</title>
   <meta name="description" content="Adam Operations Group works with established, owner-led businesses that need stronger systems, leadership, and less dependence on the owner.">
@@ -76,7 +81,7 @@
         <h2>If this is the business you run, start with the scorecard.</h2>
         <p class="lede">Thirty questions. About eight minutes. A clear read on how dependent the company is on you.</p>
         <div class="hero-actions">
-          <a class="btn btn-blue" href="https://adamoperationsgroup.com/scorecard-survey">Take the Scorecard <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-blue" href="https://www.adamoperationsgroup.com/scorecard-survey">Take the Scorecard <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </div>
     </section>
@@ -99,7 +104,7 @@
     </div>
     <div class="wrap footer-bottom">
       <p>© 2026 Adam Operations Group</p>
-      <a href="https://adamoperationsgroup.com/scorecard-survey">Take the assessment</a>
+      <a href="https://www.adamoperationsgroup.com/scorecard-survey">Take the assessment</a>
     </div>
   </footer>
   <script src="js/site.js"></script>

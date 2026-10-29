@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>
+    if ((location.protocol === "http:" || location.protocol === "https:") && location.hostname !== "www.adamoperationsgroup.com") {
+      location.replace("https://www.adamoperationsgroup.com" + location.pathname + location.search + location.hash);
+    }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Services | Adam Operations Group</title>
   <meta name="description" content="Operations, leadership, performance visibility, automation, and growth strategy for established, owner-led businesses.">
@@ -127,7 +132,7 @@
     </div>
     <div class="wrap footer-bottom">
       <p>© 2026 Adam Operations Group</p>
-      <a href="https://adamoperationsgroup.com/scorecard-survey">Take the assessment</a>
+      <a href="https://www.adamoperationsgroup.com/scorecard-survey">Take the assessment</a>
     </div>
   </footer>
   <script src="js/site.js"></script>
